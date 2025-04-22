@@ -1,39 +1,76 @@
-# API test automation with Jest and PactumJS
+# API Integration Tests - Fakerestapi (Books)
 
-> Simple integration between JestJS and PactumJS.
+Este projeto realiza testes de integração automatizados para a API [Fakerestapi](https://fakerestapi.azurewebsites.net/index.html), focando nos endpoints relacionados a **Books**. Utiliza as ferramentas **Jest**, **PactumJS**, **Prettier**, **ESLint** e integração com **SonarQube** para garantir qualidade, padronização e cobertura dos testes.
 
-## GitHub Actions
+## Tecnologias Utilizadas
 
-[![Node.js CI](https://github.com/ugioni/integration-tests-jest/actions/workflows/node.js.yml/badge.svg?branch=master)](https://github.com/ugioni/integration-tests-jest/actions/workflows/node.js.yml)
+- [Jest](https://jestjs.io/) - Test runner
+- [PactumJS](https://pactumjs.github.io/) - Framework para testes de API
+- [Prettier](https://prettier.io/) - Formatação de código
+- [ESLint](https://eslint.org/) - Linter para JavaScript
+- [SonarQube](https://www.sonarqube.org/) - Análise de qualidade de código
 
-## SonarCloud
+## Endpoints Testados
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ugioni_integration-tests-jest&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=ugioni_integration-tests-jest)
+Os principais endpoints testados deste projeto são:
 
-# Getting Started
+- `GET /api/v1/Books` - Lista todos os livros
+- `POST /api/v1/Books` - Cria um novo livro
+- `GET /api/v1/Books/{id}` - Busca um livro pelo ID
+- `PUT /api/v1/Books/{id}` - Atualiza um livro pelo ID
+- `DELETE /api/v1/Books/{id}` - Remove um livro pelo ID
 
-### Pactum docs:
- - [PactumJS](https://pactumjs.github.io/)
+Também podem ser testados endpoints relacionados a autores e capas de livros, como:
 
-### Prerequisites:
- - NodeJS `v20`
+- `GET /api/v1/Authors/authors/books/{idBook}` - Lista autores de um livro
+- `GET /api/v1/CoverPhotos/books/covers/{idBook}` - Lista capas de um livro
 
-### How to run?
+A documentação completa da API pode ser encontrada [aqui](https://fakerestapi.azurewebsites.net/index.html).
 
-Inside of the project folder run:
+## Pré-requisitos
 
- 1. `npm install --save-dev`
- 1. `npm run ci`
+- Node.js `v20` ou superior
+- npm
 
-After that you should see a `./output` folder with some `HTML` reports.
+## Instalação
 
-### Docs to Api under tests: 
- - [Toolshop API](https://api.practicesoftwaretesting.com/api/documentation)
- - [Deck of Cards](https://deckofcardsapi.com/)
- - [JSON placeholder](https://jsonplaceholder.typicode.com/)
- - [http bin](http://httpbin.org/)
- - [rick and morty api](https://rickandmortyapi.com/documentation/#rest)
- - [Petstore](https://petstore.swagger.io/#/) 
- - [ServeRest](https://serverest.dev/#/)
- - [ServeRest - Datadog](https://p.datadoghq.eu/sb/421fcfee-35ec-11ee-b87f-da7ad0900005-2aaf85264a89d11b7001bcab452a266e?refresh_mode=sliding&theme=light&tpl_var_env%5B0%5D=serverest.dev&from_ts=1699931511294&to_ts=1699932411294&live=true)
- 
+Clone o repositório e instale as dependências:
+
+```sh
+git clone https://github.com/seu-usuario/seu-repo.git
+cd seu-repo
+npm install
+```
+
+## Como executar os testes
+
+Execute os testes com o comando:
+
+```sh
+npm test
+```
+
+Ou, para rodar o pipeline completo (incluindo lint e prettier):
+
+```sh
+npm run ci
+```
+
+Após a execução, os relatórios de testes podem ser encontrados na pasta `./output`.
+
+## Padronização de Código
+
+- Para formatar o código:  
+  `npm run format`
+- Para checar problemas de lint:  
+  `npm run lint`
+
+## Análise de Qualidade
+
+A análise de qualidade do código é feita via SonarQube. Consulte o pipeline CI para detalhes.
+
+## Referências
+
+- [Fakerestapi Swagger](https://fakerestapi.azurewebsites.net/index.html)
+- [PactumJS Docs](https://pactumjs.github.io/)
+- [Jest Docs](https://jestjs.io/docs/getting-started)
