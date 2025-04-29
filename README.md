@@ -58,13 +58,6 @@ npm run ci
 
 Após a execução, os relatórios de testes podem ser encontrados na pasta `./output`.
 
-## Padronização de Código
-
-- Para formatar o código:  
-  `npm run format`
-- Para checar problemas de lint:  
-  `npm run lint`
-
 ## Análise de Qualidade
 
 A análise de qualidade do código é feita via SonarQube. Consulte o pipeline CI para detalhes.
