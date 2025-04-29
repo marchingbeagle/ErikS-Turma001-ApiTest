@@ -69,6 +69,40 @@ Após a execução, os relatórios de testes podem ser encontrados na pasta `./o
 
 A análise de qualidade do código é feita via SonarQube. Consulte o pipeline CI para detalhes.
 
+## Descrição dos Testes Automatizados
+
+Abaixo estão as explicações dos testes implementados no arquivo `fakerestapi.spec.ts`:
+
+- **Buscar todos os livros:**  
+  Verifica se a API retorna uma lista de livros no formato esperado.
+
+- **Buscar um livro pelo ID:**  
+  Garante que é possível recuperar um livro específico pelo seu ID.
+
+- **Buscar um livro inexistente:**  
+  Testa se a API retorna o status 404 ao buscar um livro que não existe.
+
+- **Criar um novo livro:**  
+  Valida se um novo livro pode ser criado com sucesso e se os dados retornados estão corretos.
+
+- **Criar um livro com dados inválidos:**  
+  Verifica se a API retorna erro ao tentar criar um livro com dados inválidos.
+
+- **Atualizar um livro existente:**  
+  Testa se é possível atualizar os dados de um livro já cadastrado.
+
+- **Deletar um livro:**  
+  Garante que um livro pode ser removido da base de dados.
+
+- **Buscar autores de um livro:**  
+  Verifica se a API retorna corretamente os autores associados a um livro.
+
+- **Buscar autores de um livro inexistente:**  
+  Testa se a API retorna um array vazio ao buscar autores de um livro que não existe.
+
+- **Buscar capas de um livro:**  
+  Valida se a API retorna as capas associadas a um livro específico.
+
 ## Referências
 
 - [Fakerestapi Swagger](https://fakerestapi.azurewebsites.net/index.html)
